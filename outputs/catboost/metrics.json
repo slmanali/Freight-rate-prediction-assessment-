@@ -1,0 +1,192 @@
+{
+  "model": "CatBoostRegressor",
+  "target": "posted_rate",
+  "loss": "MAE",
+  "metric_units": "USD",
+  "features": [
+    "pickup",
+    "delivery",
+    "equipment",
+    "lane",
+    "distance",
+    "log_distance",
+    "weight",
+    "weight_missing",
+    "weight_invalid",
+    "pickup_lat",
+    "pickup_lon",
+    "delivery_lat",
+    "delivery_lon",
+    "latitude_change",
+    "longitude_change",
+    "month",
+    "day_of_month",
+    "day_of_week",
+    "weekend",
+    "day_of_year_sin",
+    "day_of_year_cos"
+  ],
+  "categorical_features": [
+    "pickup",
+    "delivery",
+    "equipment",
+    "lane"
+  ],
+  "excluded_inputs": [
+    "load_id",
+    "market_index",
+    "quote_signal"
+  ],
+  "prediction_floor_usd": 0.01,
+  "development_rows": 38477,
+  "holdout_rows": 9523,
+  "development_date_range": [
+    "2025-01-01",
+    "2025-08-31"
+  ],
+  "holdout_date_range": [
+    "2025-09-01",
+    "2025-10-31"
+  ],
+  "selection": {
+    "criterion": "lowest validation-row-weighted chronological CV MAE",
+    "iteration_rule": "median of the selected depth's best tree counts across folds",
+    "candidates": [
+      {
+        "depth": 6,
+        "cv_mae": 140.05594865671165,
+        "cv_rmse": 606.3486043716462,
+        "iterations": 503
+      },
+      {
+        "depth": 8,
+        "cv_mae": 146.4808460978663,
+        "cv_rmse": 609.4812362578716,
+        "iterations": 358
+      }
+    ],
+    "selected": {
+      "depth": 6,
+      "cv_mae": 140.05594865671165,
+      "cv_rmse": 606.3486043716462,
+      "iterations": 503
+    },
+    "seed": 42,
+    "threads": 4,
+    "max_iterations": 1200,
+    "early_stopping_rounds": 80
+  },
+  "fitted_parameters": {
+    "nan_mode": "Min",
+    "eval_metric": "MAE",
+    "combinations_ctr": [
+      "Borders:CtrBorderCount=15:CtrBorderType=Uniform:TargetBorderCount=1:TargetBorderType=MinEntropy:Prior=0/1:Prior=0.5/1:Prior=1/1",
+      "Counter:CtrBorderCount=15:CtrBorderType=Uniform:Prior=0/1"
+    ],
+    "iterations": 503,
+    "sampling_frequency": "PerTree",
+    "fold_permutation_block": 0,
+    "leaf_estimation_method": "Exact",
+    "random_score_type": "NormalWithModelSizeDecrease",
+    "counter_calc_method": "SkipTest",
+    "grow_policy": "SymmetricTree",
+    "penalties_coefficient": 1,
+    "boosting_type": "Plain",
+    "model_shrink_mode": "Constant",
+    "feature_border_type": "GreedyLogSum",
+    "ctr_leaf_count_limit": 18446744073709551615,
+    "bayesian_matrix_reg": 0.10000000149011612,
+    "one_hot_max_size": 2,
+    "eval_fraction": 0,
+    "force_unit_auto_pair_weights": false,
+    "l2_leaf_reg": 3,
+    "random_strength": 1,
+    "rsm": 1,
+    "boost_from_average": true,
+    "max_ctr_complexity": 4,
+    "model_size_reg": 0.5,
+    "simple_ctr": [
+      "Borders:CtrBorderCount=15:CtrBorderType=Uniform:TargetBorderCount=1:TargetBorderType=MinEntropy:Prior=0/1:Prior=0.5/1:Prior=1/1",
+      "Counter:CtrBorderCount=15:CtrBorderType=Uniform:Prior=0/1"
+    ],
+    "pool_metainfo_options": {
+      "tags": {}
+    },
+    "subsample": 0.800000011920929,
+    "use_best_model": false,
+    "random_seed": 42,
+    "depth": 6,
+    "ctr_target_border_count": 1,
+    "posterior_sampling": false,
+    "has_time": false,
+    "store_all_simple_ctr": false,
+    "border_count": 254,
+    "classes_count": 0,
+    "auto_class_weights": "None",
+    "sparse_features_conflict_fraction": 0,
+    "leaf_estimation_backtracking": "AnyImprovement",
+    "best_model_min_trees": 1,
+    "model_shrink_rate": 0,
+    "min_data_in_leaf": 1,
+    "loss_function": "MAE",
+    "learning_rate": 0.05000000074505806,
+    "score_function": "Cosine",
+    "task_type": "CPU",
+    "leaf_estimation_iterations": 1,
+    "bootstrap_type": "MVS",
+    "max_leaves": 64,
+    "permutation_count": 4
+  },
+  "catboost": {
+    "mae": 128.880473286786,
+    "rmse": 641.4406816459385
+  },
+  "baseline": {
+    "mae": 229.09657316845033,
+    "rmse": 670.6599545300177
+  },
+  "mae_reduction_percent": 43.74404143006423,
+  "rmse_reduction_percent": 4.356794033506195,
+  "by_month": [
+    {
+      "month": "2025-09",
+      "rows": 4670,
+      "mae": 114.09813378105639,
+      "rmse": 619.6395133201935
+    },
+    {
+      "month": "2025-10",
+      "rows": 4853,
+      "mae": 143.10539096487324,
+      "rmse": 661.7419779555312
+    }
+  ],
+  "by_equipment": [
+    {
+      "equipment": "Dry Van",
+      "rows": 5360,
+      "mae": 122.28631609531183,
+      "rmse": 661.6130372684229
+    },
+    {
+      "equipment": "Flatbed",
+      "rows": 1770,
+      "mae": 131.10903285631034,
+      "rmse": 517.1594995719281
+    },
+    {
+      "equipment": "Reefer",
+      "rows": 2393,
+      "mae": 142.00213317322297,
+      "rmse": 677.5504886981541
+    }
+  ],
+  "final_fit_seconds": 7.093613139993977,
+  "data_sha256": "892980fd20bac7ac0ca4ec31d3981fca48d52dec88e4f02642ab955f1efb40fe",
+  "versions": {
+    "python": "3.12.3",
+    "catboost": "1.2.8",
+    "pandas": "2.3.3",
+    "numpy": "2.4.2"
+  }
+}

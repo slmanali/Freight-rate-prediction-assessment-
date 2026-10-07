@@ -1,0 +1,68 @@
+{
+  "model": "equipment_median_rate_per_mile",
+  "features": [
+    "equipment",
+    "distance"
+  ],
+  "target": "posted_rate",
+  "metric_units": "USD",
+  "cutoff": "2025-09-01",
+  "train_rows": 38477,
+  "holdout_rows": 9523,
+  "train_date_range": [
+    "2025-01-01",
+    "2025-08-31"
+  ],
+  "holdout_date_range": [
+    "2025-09-01",
+    "2025-10-31"
+  ],
+  "rates_per_mile": {
+    "Dry Van": 2.0447135024459087,
+    "Flatbed": 2.213186378035903,
+    "Reefer": 2.3102834291539587
+  },
+  "fallback_rate_per_mile": 2.1411506730351713,
+  "preprocessing_medians": {
+    "weight": 31467.0,
+    "market_index": 1.12
+  },
+  "overall": {
+    "mae": 229.09657316845033,
+    "rmse": 670.6599545300177
+  },
+  "by_month": [
+    {
+      "month": "2025-09",
+      "rows": 4670,
+      "mae": 227.3228443336537,
+      "rmse": 657.0658007591788
+    },
+    {
+      "month": "2025-10",
+      "rows": 4853,
+      "mae": 230.8034171120935,
+      "rmse": 683.4862602449599
+    }
+  ],
+  "by_equipment": [
+    {
+      "equipment": "Dry Van",
+      "rows": 5360,
+      "mae": 225.17312176030376,
+      "rmse": 686.2719576836294
+    },
+    {
+      "equipment": "Flatbed",
+      "rows": 1770,
+      "mae": 218.10688961349848,
+      "rmse": 557.7299406006495
+    },
+    {
+      "equipment": "Reefer",
+      "rows": 2393,
+      "mae": 246.0131797041505,
+      "rmse": 710.5922209995246
+    }
+  ]
+}

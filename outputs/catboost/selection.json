@@ -1,0 +1,28 @@
+{
+  "criterion": "lowest validation-row-weighted chronological CV MAE",
+  "iteration_rule": "median of the selected depth's best tree counts across folds",
+  "candidates": [
+    {
+      "depth": 6,
+      "cv_mae": 140.05594865671165,
+      "cv_rmse": 606.3486043716462,
+      "iterations": 503
+    },
+    {
+      "depth": 8,
+      "cv_mae": 146.4808460978663,
+      "cv_rmse": 609.4812362578716,
+      "iterations": 358
+    }
+  ],
+  "selected": {
+    "depth": 6,
+    "cv_mae": 140.05594865671165,
+    "cv_rmse": 606.3486043716462,
+    "iterations": 503
+  },
+  "seed": 42,
+  "threads": 4,
+  "max_iterations": 1200,
+  "early_stopping_rounds": 80
+}
